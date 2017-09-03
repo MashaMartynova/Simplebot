@@ -13,6 +13,7 @@ def start_bot(bot, update):
     mytext = """Привет, {}{}
 Я простой бот и понимаю только команду /start
     """.format(update.message.chat.first_name,update.message.chat.last_name)
+    logging.info('Пользователь {} нажал /start'.format(update.message.chat.username))
     update.message.reply_text(mytext)
 
 def chat(bot, update):
