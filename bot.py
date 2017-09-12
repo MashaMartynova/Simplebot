@@ -42,6 +42,6 @@ def main():
     updtr.start_polling()
     updtr.idle()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     logging.info('Bot started')
     main()
