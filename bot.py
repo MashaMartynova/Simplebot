@@ -1,9 +1,10 @@
 import logging
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
 import settings
 import ephem
 import datetime
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+
+
 
 logging.basicConfig() 
 
@@ -27,8 +28,9 @@ def name_of_planet_bot(bot, update, args):
 
 
 def chat(bot, update):
-
-    logging.info(text)
+    text_message = update.message.text
+    update.message.reply_text(text_message)
+    logging.info(text_message)
     
 
 def main():
@@ -42,6 +44,6 @@ def main():
     updtr.start_polling()
     updtr.idle()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     logging.info('Bot started')
     main()
